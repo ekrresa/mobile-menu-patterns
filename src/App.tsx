@@ -13,8 +13,29 @@ function App() {
 
   return (
     <>
-      <h1 className="text-center text-3xl py-3 mb-6">Mobile Menu Patterns</h1>
-      <div className="max-w-[428px] bg-white mx-auto h-[55rem] overflow-y-auto rounded">
+      <h1 className="text-center text-3xl py-3 mb-2">Mobile Menu Patterns</h1>
+      <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto mb-8">
+        <button className="bg-cyan-500 text-gray-50 px-4 py-1 rounded-md font-medium">
+          Push content down
+        </button>
+        <button className="bg-cyan-500 text-gray-50 px-4 py-1 rounded-md font-medium">
+          fullscreen overlay
+        </button>
+        <button className="bg-cyan-500 text-gray-50 px-4 py-1 rounded-md font-medium">
+          pop-over panel
+        </button>
+        <button className="bg-cyan-500 text-gray-50 px-4 py-1 rounded-md font-medium">
+          slide-in from left
+        </button>
+        <button className="bg-cyan-500 text-gray-50 px-4 py-1 rounded-md font-medium">
+          slide-in from right
+        </button>
+        <button className="bg-cyan-500 text-gray-50 px-4 py-1 rounded-md font-medium">
+          slide-in from bottom
+        </button>
+      </div>
+
+      <div className="max-w-[428px] bg-white mx-auto h-[50rem] overflow-y-auto rounded">
         <div className="sticky top-0 bg-white">
           <div className="flex justify-between items-center  px-4 py-4 border-b">
             <h1 className="text-2xl font-semibold">Contacts</h1>
