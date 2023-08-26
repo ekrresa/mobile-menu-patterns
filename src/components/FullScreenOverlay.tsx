@@ -15,11 +15,11 @@ export default function FullScreenOverlay() {
     gridTemplateRows: menuOpen ? '1fr' : '0fr',
   })
 
-  const filteredContacts = matchSorter(contactsJSON, searchString, {
+  const contacts = matchSorter(contactsJSON, searchString, {
     keys: ['first_name', 'last_name'],
   })
 
-  const contactsByAlphabet = filteredContacts.reduce(
+  const contactsByAlphabet = contacts.reduce(
     (group, contact) => {
       const firstLetter = contact.first_name[0]
         ? contact.first_name[0].toUpperCase()
