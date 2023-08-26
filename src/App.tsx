@@ -2,27 +2,27 @@ import FullScreenOverlay from './components/FullScreenOverlay'
 
 function App() {
   return (
-    <div className="grid grid-rows-[auto,auto,1fr] h-screen justify-center">
-      <h1 className="text-center text-3xl text-[#2C4251] pt-4 pb-3 mb-2">
+    <div className="grid h-screen grid-rows-[auto,auto,1fr] justify-center">
+      <h1 className="mb-2 pb-3 pt-4 text-center text-3xl text-[#2C4251]">
         Mobile Menu Patterns
       </h1>
-      <div className="flex flex-wrap justify-center gap-4 max-w-2xl mb-8">
-        <button className="bg-mosaic-500 text-gray-50 px-4 py-1 rounded-md capitalize">
+      <div className="mb-8 flex max-w-2xl flex-wrap justify-center gap-4">
+        <button className="rounded-md bg-mosaic-500 px-4 py-1 capitalize text-gray-50">
           Push content down
         </button>
-        <button className="bg-mosaic-500 text-gray-50 px-4 py-1 rounded-md capitalize">
+        <button className="rounded-md bg-mosaic-500 px-4 py-1 capitalize text-gray-50">
           fullscreen overlay
         </button>
-        <button className="bg-mosaic-500 text-gray-50 px-4 py-1 rounded-md capitalize">
+        <button className="rounded-md bg-mosaic-500 px-4 py-1 capitalize text-gray-50">
           pop-over panel
         </button>
-        <button className="bg-mosaic-500 text-gray-50 px-4 py-1 rounded-md capitalize">
+        <button className="rounded-md bg-mosaic-500 px-4 py-1 capitalize text-gray-50">
           slide-in from left
         </button>
-        <button className="bg-mosaic-500 text-gray-50 px-4 py-1 rounded-md capitalize">
+        <button className="rounded-md bg-mosaic-500 px-4 py-1 capitalize text-gray-50">
           slide-in from right
         </button>
-        <button className="bg-mosaic-500 text-gray-50 px-4 py-1 rounded-md capitalize">
+        <button className="rounded-md bg-mosaic-500 px-4 py-1 capitalize text-gray-50">
           slide-in from bottom
         </button>
       </div>
