@@ -1,4 +1,4 @@
-import FullScreenOverlay from './components/FullScreenOverlay'
+import { PushContentDown } from './components/PushContentDown'
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
         </button>
       </div>
 
-      <FullScreenOverlay />
+      <PushContentDown />
     </div>
   )
 }

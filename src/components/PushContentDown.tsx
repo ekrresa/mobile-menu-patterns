@@ -7,7 +7,7 @@ import contactsJSON from '../assets/contacts.json'
 
 type Contact = (typeof contactsJSON)[number]
 
-export default function FullScreenOverlay() {
+export function PushContentDown() {
   const [menuOpen, toggleMenu] = React.useState(false)
   const [searchString, setSearchString] = React.useState('')
 
@@ -42,10 +42,10 @@ export default function FullScreenOverlay() {
           <h1 className="text-2xl font-semibold">Contacts</h1>
 
           <button
-            className="grid place-items-center rounded-full bg-mosaic-100 p-2"
+            className="grid place-items-center"
             onClick={() => toggleMenu(state => !state)}
           >
-            <Menu className="text-2xl" />
+            <Menu strokeWidth={1.5} />
           </button>
         </div>
 
