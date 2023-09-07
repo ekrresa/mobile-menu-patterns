@@ -52,29 +52,31 @@ export function PushContentDown() {
               ? { gridTemplateRows: ' 1fr' }
               : { gridTemplateRows: '0fr' }
           }
-          className="grid px-6"
+          className="grid"
         >
-          <ul className="flex flex-col gap-4 overflow-hidden">
-            <li className="flex items-center gap-2 pt-4">
+          <ul className="flex flex-col gap-2 overflow-hidden">
+            <li className="pt-2"></li>
+            <li className="flex cursor-pointer items-center gap-2 px-6 py-1 transition-colors hover:bg-mosaic-50">
               <Home size={22} strokeWidth={1.5} />
               <span className="font-normal">Home</span>
             </li>
-            <li className="flex items-center gap-2">
+            <li className="flex cursor-pointer items-center gap-2 px-6 py-1 transition-colors hover:bg-mosaic-50">
               <Phone size={22} strokeWidth={1.5} />
               <span className="font-normal">Calls</span>
             </li>
-            <li className="flex items-center gap-2">
+            <li className="flex cursor-pointer items-center gap-2 px-6 py-1 transition-colors hover:bg-mosaic-50">
               <Mail size={22} strokeWidth={1.5} />
               <span className="font-normal">Messages</span>
             </li>
-            <li className="flex items-center gap-2">
+            <li className="flex cursor-pointer items-center gap-2 px-6 py-1 transition-colors hover:bg-mosaic-50">
               <Ban size={22} strokeWidth={1.5} />
               <span className="font-normal">Blocked Calls</span>
             </li>
-            <li className="flex items-center gap-2 pb-4">
+            <li className="flex cursor-pointer items-center gap-2 px-6 py-1 transition-colors hover:bg-mosaic-50">
               <Settings size={22} strokeWidth={1.5} />
               <span className="font-normal">Settings</span>
             </li>
+            <li className="pb-2"></li>
           </ul>
         </motion.nav>
 
@@ -86,9 +88,10 @@ export function PushContentDown() {
               strokeWidth={1.5}
             />
             <input
-              className="ml-3 flex-1 py-2 font-normal text-slate-800 focus:outline-none"
+              className="ml-3 flex-1 py-2 font-normal text-slate-700 placeholder:text-sm placeholder:text-gray-400 focus:outline-none"
               onChange={e => setSearchString(e.target.value)}
-              placeholder="Search..."
+              placeholder="Search names and phone numbers..."
+              autoFocus
             />
           </div>
         </div>
