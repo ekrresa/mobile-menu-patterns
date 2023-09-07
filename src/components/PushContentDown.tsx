@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { animated, useSpring } from '@react-spring/web'
+import { motion } from 'framer-motion'
 import { Ban, Home, Mail, Menu, Phone, Search, Settings } from 'lucide-react'
 import { matchSorter } from 'match-sorter'
 
@@ -10,10 +10,6 @@ type Contact = (typeof contactsJSON)[number]
 export function PushContentDown() {
   const [menuOpen, toggleMenu] = React.useState(false)
   const [searchString, setSearchString] = React.useState('')
-
-  const props = useSpring({
-    gridTemplateRows: menuOpen ? '1fr' : '0fr',
-  })
 
   const contacts = matchSorter(contactsJSON, searchString, {
     keys: ['first_name', 'last_name'],
@@ -49,7 +45,15 @@ export function PushContentDown() {
           </button>
         </div>
 
-        <animated.nav style={props} className="grid px-6">
+        <motion.nav
+          initial={{ gridTemplateRows: '0fr' }}
+          animate={
+            menuOpen
+              ? { gridTemplateRows: ' 1fr' }
+              : { gridTemplateRows: '0fr' }
+          }
+          className="grid px-6"
+        >
           <ul className="flex flex-col gap-4 overflow-hidden">
             <li className="flex items-center gap-2 pt-4">
               <Home size={22} strokeWidth={1.5} />
@@ -72,7 +76,7 @@ export function PushContentDown() {
               <span className="font-normal">Settings</span>
             </li>
           </ul>
-        </animated.nav>
+        </motion.nav>
 
         <div className="border-b bg-mosaic-50 px-4 py-4">
           <div className="flex items-center overflow-hidden rounded border bg-white pl-3 pr-2">
