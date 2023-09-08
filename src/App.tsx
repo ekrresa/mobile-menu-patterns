@@ -1,4 +1,4 @@
-// import { PopOverPanel } from './components/PopOverPanel'
+import { PopOverPanel } from './components/PopOverPanel'
 import { PushContentDown } from './components/PushContentDown'
 
 function App() {
@@ -28,7 +28,8 @@ function App() {
         </button>
       </div>
 
-      <PushContentDown />
+      <PopOverPanel />
+      {/* <PushContentDown /> */}
     </div>
   )
 }
