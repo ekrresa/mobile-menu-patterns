@@ -1,5 +1,6 @@
 import { PopOverPanel } from './components/PopOverPanel'
-import { PushContentDown } from './components/PushContentDown'
+// import { PushContentDown } from './components/PushContentDown'
+import { FullScreenOverlay } from './components/FullScreenOverlay'
 
 function App() {
   return (
@@ -28,8 +29,7 @@ function App() {
         </button>
       </div>
 
-      <PopOverPanel />
-      {/* <PushContentDown /> */}
+      <FullScreenOverlay />
     </div>
   )
 }
