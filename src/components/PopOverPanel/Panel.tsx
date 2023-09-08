@@ -19,9 +19,11 @@ export function Panel(props: Props) {
             className="fixed top-5 mx-auto flex w-11/12 items-center rounded-2xl bg-white py-4"
             initial={{
               scale: 1.1,
+              opacity: 0,
             }}
             animate={{
               scale: 1,
+              opacity: 1,
             }}
             exit={{
               opacity: 0,
