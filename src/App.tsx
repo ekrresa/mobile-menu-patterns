@@ -1,6 +1,5 @@
-import { PopOverPanel } from './components/PopOverPanel'
 // import { PushContentDown } from './components/PushContentDown'
-import { FullScreenOverlay } from './components/FullScreenOverlay'
+import { SlideInFromLeft } from './components/SlideInFromLeft'
 
 function App() {
   return (
@@ -29,7 +28,7 @@ function App() {
         </button>
       </div>
 
-      <FullScreenOverlay />
+      <SlideInFromLeft />
     </div>
   )
 }
