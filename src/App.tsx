@@ -1,5 +1,5 @@
 // import { PushContentDown } from './components/PushContentDown'
-import { SlideInFromRight } from './components/SlideInFromRight'
+import { SlideInFromBottom } from './components/SlideInFromBottom'
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
         </button>
       </div>
 
-      <SlideInFromRight />
+      <SlideInFromBottom />
     </div>
   )
 }
