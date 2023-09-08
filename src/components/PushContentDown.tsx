@@ -37,21 +37,18 @@ export function PushContentDown() {
         <div className="flex items-center justify-between border-b px-4 py-4">
           <h1 className="text-2xl font-medium">Contacts</h1>
 
-          <button
+          <motion.button
+            whileTap={{ scale: 0.9 }}
             className="grid place-items-center"
             onClick={() => toggleMenu(state => !state)}
           >
             <Menu strokeWidth={1.5} />
-          </button>
+          </motion.button>
         </div>
 
         <motion.nav
           initial={{ gridTemplateRows: '0fr' }}
-          animate={
-            menuOpen
-              ? { gridTemplateRows: ' 1fr' }
-              : { gridTemplateRows: '0fr' }
-          }
+          animate={{ gridTemplateRows: menuOpen ? ' 1fr' : '0fr' }}
           className="grid"
         >
           <ul className="flex flex-col gap-2 overflow-hidden">
