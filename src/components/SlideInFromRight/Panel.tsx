@@ -21,11 +21,11 @@ export function Panel(props: Props) {
           exit={{
             opacity: 0,
           }}
-          className="absolute inset-0 z-10 flex justify-start overflow-y-auto bg-black/30"
+          className="absolute inset-0 z-10 flex justify-end overflow-y-auto bg-black/50"
         >
           <motion.div
             initial={{
-              x: '-80%',
+              x: '100%',
             }}
             animate={{
               x: 0,
@@ -35,7 +35,7 @@ export function Panel(props: Props) {
               },
             }}
             exit={{
-              x: '-90%',
+              x: '90%',
             }}
             className="w-3/4 bg-white"
           >
