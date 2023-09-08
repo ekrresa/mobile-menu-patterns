@@ -1,3 +1,7 @@
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -31,6 +35,9 @@ export default {
           900: '#3d3b3f',
           950: '#242325',
         },
+      },
+      fontFamily: {
+        sans: ['Figtree', ...defaultTheme.fontFamily.sans],
       },
     },
   },
