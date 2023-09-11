@@ -32,13 +32,16 @@ export function PushContentDown() {
   const alphabets = Object.keys(contactsByAlphabet).sort()
 
   return (
-    <div className="mx-auto mb-4 w-full max-w-md overflow-y-auto rounded-md bg-white text-baltic-900 drop-shadow">
+    <div className="relative mb-4 h-full w-full overflow-y-auto bg-white text-baltic-900">
       <div className="sticky top-0 bg-white">
         <div className="flex items-center justify-between border-b px-4 py-4">
-          <h1 className="text-2xl font-medium">Contacts</h1>
+          <h1 className="text-xl font-medium text-mosaic-900">
+            Push Content Down
+          </h1>
 
           <motion.button
             whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
             className="grid place-items-center"
             onClick={() => toggleMenu(state => !state)}
           >

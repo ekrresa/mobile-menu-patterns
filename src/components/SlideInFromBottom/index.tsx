@@ -4,6 +4,7 @@ import { matchSorter } from 'match-sorter'
 
 import contactsJSON from '../../assets/contacts.json'
 import { Panel } from './Panel'
+import { motion } from 'framer-motion'
 
 type Contact = (typeof contactsJSON)[number]
 
@@ -32,20 +33,24 @@ export function SlideInFromBottom() {
   const alphabets = Object.keys(contactsByAlphabet).sort()
 
   return (
-    <div className="relative mx-auto mb-4 w-full max-w-md overflow-y-auto rounded-[1.25rem] bg-white text-baltic-900 drop-shadow">
+    <div className="relative mb-4 h-full w-full overflow-y-auto bg-white text-baltic-900">
       <Panel open={menuOpen} closeMenu={() => toggleMenu(false)} />
 
-      <button
+      <motion.button
         aria-label={menuOpen ? 'close menu' : 'open menu'}
-        className="absolute bottom-12 right-8 grid h-12 w-12 place-items-center rounded-full bg-mosaic-200 shadow-sm"
+        className="absolute bottom-12 right-8 grid h-12 w-12 place-items-center rounded-full border border-baltic-200 bg-mosaic-200 shadow-sm"
         onClick={() => toggleMenu(state => !state)}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
       >
         <Menu strokeWidth={1.5} />
-      </button>
+      </motion.button>
 
       <div className="sticky top-0 bg-white">
         <div className="flex items-center justify-between border-b px-4 py-4">
-          <h1 className="text-2xl font-medium">Contacts</h1>
+          <h1 className="text-xl font-medium text-mosaic-900">
+            Slide In From Bottom
+          </h1>
         </div>
 
         <div className="border-b bg-mosaic-50 px-4 py-4">

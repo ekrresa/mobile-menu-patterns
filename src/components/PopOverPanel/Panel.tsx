@@ -12,7 +12,7 @@ export function Panel(props: Props) {
     <AnimatePresence>
       {open && (
         <motion.div
-          className="absolute inset-0 z-10 flex cursor-pointer justify-center overflow-y-auto bg-black/30 backdrop-blur-sm"
+          className="absolute inset-0 z-10 flex cursor-pointer justify-center overflow-y-auto bg-black/50"
           onClick={closeMenu}
         >
           <motion.div

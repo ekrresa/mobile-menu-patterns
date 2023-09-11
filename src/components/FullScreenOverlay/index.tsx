@@ -4,6 +4,7 @@ import { matchSorter } from 'match-sorter'
 
 import contactsJSON from '../../assets/contacts.json'
 import { Panel } from './Panel'
+import { motion } from 'framer-motion'
 
 type Contact = (typeof contactsJSON)[number]
 
@@ -32,20 +33,24 @@ export function FullScreenOverlay() {
   const alphabets = Object.keys(contactsByAlphabet).sort()
 
   return (
-    <div className="relative mx-auto mb-4 w-full max-w-md overflow-y-auto rounded-md bg-white text-baltic-900 drop-shadow">
+    <div className="relative mb-4 h-full w-full overflow-y-auto bg-white text-baltic-900">
       <Panel open={menuOpen} closeMenu={() => toggleMenu(false)} />
 
       <div className="sticky top-0 bg-white">
         <div className="flex items-center justify-between border-b px-4 py-4">
-          <h1 className="text-2xl font-medium">Contacts</h1>
+          <h1 className="text-xl font-medium text-mosaic-900">
+            Full Screen Overlay
+          </h1>
 
-          <button
+          <motion.button
             aria-label={menuOpen ? 'close menu' : 'open menu'}
             className="grid place-items-center"
             onClick={() => toggleMenu(state => !state)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
             <Menu strokeWidth={1.5} />
-          </button>
+          </motion.button>
         </div>
 
         <div className="border-b bg-mosaic-50 px-4 py-4">

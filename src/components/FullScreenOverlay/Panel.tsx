@@ -15,15 +15,12 @@ export function Panel(props: Props) {
           initial={{
             scale: 1.1,
             opacity: 0,
-            y: -10,
           }}
           animate={{
             opacity: 1,
             scale: 1,
-            y: 0,
           }}
           exit={{
-            scale: 1.1,
             opacity: 0,
           }}
           className="absolute inset-0 z-10 flex justify-center overflow-y-auto bg-white/70 backdrop-blur-md"
