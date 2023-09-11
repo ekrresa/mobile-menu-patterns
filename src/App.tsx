@@ -6,6 +6,7 @@ import { PushContentDown } from './components/PushContentDown'
 import { SlideInFromBottom } from './components/SlideInFromBottom'
 import { SlideInFromLeft } from './components/SlideInFromLeft'
 import { SlideInFromRight } from './components/SlideInFromRight'
+import { PatternModal } from './components/PatternModal'
 
 type PatternState =
   | 'push-content-down'
@@ -27,10 +28,12 @@ function App() {
   const [activePattern, setActivePattern] =
     React.useState<PatternState>('push-content-down')
 
+  const [modalOpen, setModalOpen] = React.useState(false)
+
   return (
     <div className="mx-auto max-w-3xl px-6 text-center">
       <header>
-        <h1 className="text-center text-[2.5rem] font-semibold text-baltic-950">
+        <h1 className="text-center text-[2.5rem] font-semibold text-mosaic-900">
           Mobile Menu Patterns
         </h1>
 
@@ -42,46 +45,66 @@ function App() {
       <section className="mb-8 mt-24 flex flex-wrap justify-center gap-x-4 gap-y-10 text-left">
         <button
           className="border-b-4 border-baltic-700 bg-transparent text-lg capitalize text-baltic-700"
-          onClick={() => setActivePattern('fullscreen-overlay')}
+          onClick={() => {
+            setActivePattern('fullscreen-overlay')
+            setModalOpen(true)
+          }}
         >
           Full Screen Overlay
         </button>
         <button
           className="border-b-4 border-baltic-700 bg-transparent text-lg capitalize text-baltic-700"
-          onClick={() => setActivePattern('pop-over-panel')}
+          onClick={() => {
+            setActivePattern('pop-over-panel')
+            setModalOpen(true)
+          }}
         >
           Popover Panel
         </button>
         <button
           className="border-b-4 border-baltic-700 bg-transparent text-lg capitalize text-baltic-700"
-          onClick={() => setActivePattern('push-content-down')}
+          onClick={() => {
+            setActivePattern('push-content-down')
+            setModalOpen(true)
+          }}
         >
           Push content down
         </button>
         <button
           className="border-b-4 border-baltic-700 bg-transparent text-lg capitalize text-baltic-700"
-          onClick={() => setActivePattern('slide-in-from-bottom')}
+          onClick={() => {
+            setActivePattern('slide-in-from-bottom')
+            setModalOpen(true)
+          }}
         >
           Slide in from bottom
         </button>
         <button
           className="border-b-4 border-baltic-700 bg-transparent text-lg capitalize text-baltic-700"
-          onClick={() => setActivePattern('slide-in-from-left')}
+          onClick={() => {
+            setActivePattern('slide-in-from-left')
+            setModalOpen(true)
+          }}
         >
           Slide in from left
         </button>
 
         <button
           className="border-b-4 border-baltic-700 bg-transparent text-lg capitalize text-baltic-700"
-          onClick={() => setActivePattern('slide-in-from-right')}
+          onClick={() => {
+            setActivePattern('slide-in-from-right')
+            setModalOpen(true)
+          }}
         >
           Slide in from right
         </button>
       </section>
 
-      {/* {patternMap[activePattern]} */}
+      <PatternModal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
+        {patternMap[activePattern]}
+      </PatternModal>
 
-      <footer className="absolute bottom-0 left-0 mt-8 w-full py-4 text-center text-sm text-baltic-700">
+      <footer className="absolute bottom-0 left-0 -z-10 mt-8 w-full py-4 text-center text-sm text-baltic-700">
         Built by{' '}
         <a
           href="https://github.com/ekrresa"
@@ -89,7 +112,7 @@ function App() {
           rel="noreferrer"
           className="decoration-slate-500 transition-all duration-500 hover:underline"
         >
-          Ochuko
+          Ochuko.
         </a>
       </footer>
     </div>
