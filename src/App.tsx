@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="mx-auto max-w-3xl px-6 text-center">
       <header>
-        <h1 className="text-center text-[2.5rem] font-semibold text-mosaic-900">
+        <h1 className="text-center text-[2.5rem] font-semibold leading-tight text-mosaic-900">
           Mobile Menu Patterns
         </h1>
 
