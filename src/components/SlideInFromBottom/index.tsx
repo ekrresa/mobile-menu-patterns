@@ -38,7 +38,7 @@ export function SlideInFromBottom() {
 
       <motion.button
         aria-label={menuOpen ? 'close menu' : 'open menu'}
-        className="absolute bottom-12 right-8 grid h-12 w-12 place-items-center rounded-full border border-baltic-200 bg-mosaic-200 shadow-sm"
+        className="fixed bottom-36 right-8 grid h-12 w-12 place-items-center rounded-full border border-baltic-200 bg-mosaic-200 shadow-sm"
         onClick={() => toggleMenu(state => !state)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
