@@ -33,7 +33,18 @@ export function SlideInFromRight() {
   const alphabets = Object.keys(contactsByAlphabet).sort()
 
   return (
-    <div className="relative mb-4 h-full w-full overflow-y-auto bg-white text-baltic-900">
+    <div
+      ref={elem => {
+        if (!elem) return
+
+        if (menuOpen) {
+          elem.style.overflowY = 'hidden'
+        } else {
+          elem.style.overflowY = 'auto'
+        }
+      }}
+      className="relative mb-4 h-full w-full overflow-y-auto bg-white text-baltic-900"
+    >
       <Panel open={menuOpen} closeMenu={() => toggleMenu(false)} />
 
       <div className="sticky top-0 bg-white">

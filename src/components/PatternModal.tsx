@@ -32,7 +32,7 @@ export function PatternModal(props: Props) {
             }}
           >
             <div className="xs:w-96 absolute left-1/2 top-1/2 w-[90vw] -translate-x-1/2 -translate-y-1/2">
-              <div className="h-[70vh] w-full  overflow-hidden rounded-2xl border border-gray-300 shadow-lg">
+              <div className="h-[70vh] w-full overflow-hidden rounded-2xl border border-gray-300 shadow-lg">
                 {children}
               </div>
               <button
