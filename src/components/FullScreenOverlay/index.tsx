@@ -1,9 +1,10 @@
 import * as React from 'react'
 import { motion } from 'framer-motion'
-import { Menu, Search } from 'lucide-react'
+import { Menu } from 'lucide-react'
 
 import { Panel } from './Panel'
 import { getContactsByAlphabet } from '../../lib'
+import { SearchInput } from '../SearchInput'
 
 export function FullScreenOverlay() {
   const [menuOpen, toggleMenu] = React.useState(false)
@@ -43,19 +44,8 @@ export function FullScreenOverlay() {
           </motion.button>
         </div>
 
-        <div className="border-b bg-mosaic-50 px-4 py-4">
-          <div className="flex items-center overflow-hidden rounded border bg-white pl-3 pr-2">
-            <Search
-              className="text-xl text-slate-500"
-              size={20}
-              strokeWidth={1.5}
-            />
-            <input
-              className="ml-3 flex-1 py-2 font-normal text-slate-800 focus:outline-none"
-              onChange={e => setSearchString(e.target.value)}
-              placeholder="Search..."
-            />
-          </div>
+        <div className="border-b bg-mosaic-50 p-4">
+          <SearchInput onChange={e => setSearchString(e.target.value)} />
         </div>
       </div>
 

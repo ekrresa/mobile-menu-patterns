@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { motion } from 'framer-motion'
-import { Ban, Home, Mail, Menu, Phone, Search, Settings } from 'lucide-react'
+import { Ban, Home, Mail, Menu, Phone, Settings } from 'lucide-react'
 
 import { getContactsByAlphabet } from '../lib'
+import { SearchInput } from './SearchInput'
 
 export function PushContentDown() {
   const [menuOpen, toggleMenu] = React.useState(false)
@@ -59,20 +60,8 @@ export function PushContentDown() {
           </ul>
         </motion.nav>
 
-        <div className="border-b bg-mosaic-50 px-4 py-4">
-          <div className="flex items-center overflow-hidden rounded border bg-white pl-3 pr-2">
-            <Search
-              className="text-xl text-slate-500"
-              size={20}
-              strokeWidth={1.5}
-            />
-            <input
-              className="ml-3 flex-1 py-2 font-normal text-slate-700 placeholder:text-sm placeholder:text-gray-400 focus:outline-none"
-              onChange={e => setSearchString(e.target.value)}
-              placeholder="Search names and phone numbers..."
-              autoFocus
-            />
-          </div>
+        <div className="border-b bg-mosaic-50 p-4">
+          <SearchInput onChange={e => setSearchString(e.target.value)} />
         </div>
       </div>
 
