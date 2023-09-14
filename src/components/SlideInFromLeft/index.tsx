@@ -1,36 +1,15 @@
 import * as React from 'react'
-import { Menu, Search } from 'lucide-react'
-import { matchSorter } from 'match-sorter'
 import { motion } from 'framer-motion'
+import { Menu, Search } from 'lucide-react'
 
-import contactsJSON from '../../assets/contacts.json'
 import { Panel } from './Panel'
-
-type Contact = (typeof contactsJSON)[number]
+import { getContactsByAlphabet } from '../../lib'
 
 export function SlideInFromLeft() {
   const [menuOpen, toggleMenu] = React.useState(false)
   const [searchString, setSearchString] = React.useState('')
 
-  const contacts = matchSorter(contactsJSON, searchString, {
-    keys: ['first_name', 'last_name'],
-  })
-
-  const contactsByAlphabet = contacts.reduce(
-    (group, contact) => {
-      const firstLetter = contact.first_name[0]
-        ? contact.first_name[0].toUpperCase()
-        : ''
-
-      group[firstLetter] = group[firstLetter] ?? []
-
-      group[firstLetter]?.push(contact)
-      return group
-    },
-    {} as Record<string, Contact[]>
-  )
-
-  const alphabets = Object.keys(contactsByAlphabet).sort()
+  const { alphabets, contactsByAlphabet } = getContactsByAlphabet(searchString)
 
   return (
     <div

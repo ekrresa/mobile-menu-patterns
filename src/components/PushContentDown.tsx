@@ -1,35 +1,14 @@
 import * as React from 'react'
 import { motion } from 'framer-motion'
 import { Ban, Home, Mail, Menu, Phone, Search, Settings } from 'lucide-react'
-import { matchSorter } from 'match-sorter'
 
-import contactsJSON from '../assets/contacts.json'
-
-type Contact = (typeof contactsJSON)[number]
+import { getContactsByAlphabet } from '../lib'
 
 export function PushContentDown() {
   const [menuOpen, toggleMenu] = React.useState(false)
   const [searchString, setSearchString] = React.useState('')
 
-  const contacts = matchSorter(contactsJSON, searchString, {
-    keys: ['first_name', 'last_name'],
-  })
-
-  const contactsByAlphabet = contacts.reduce(
-    (group, contact) => {
-      const firstLetter = contact.first_name[0]
-        ? contact.first_name[0].toUpperCase()
-        : ''
-
-      group[firstLetter] = group[firstLetter] ?? []
-
-      group[firstLetter]?.push(contact)
-      return group
-    },
-    {} as Record<string, Contact[]>
-  )
-
-  const alphabets = Object.keys(contactsByAlphabet).sort()
+  const { alphabets, contactsByAlphabet } = getContactsByAlphabet(searchString)
 
   return (
     <div className="relative mb-4 h-full w-full overflow-y-auto bg-white text-baltic-900">
