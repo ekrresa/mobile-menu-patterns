@@ -11,10 +11,21 @@ export function Panel(props: Props) {
   return (
     <AnimatePresence>
       {open && (
-        <motion.div
-          className="absolute inset-0 z-10 flex cursor-pointer justify-center overflow-y-auto bg-black/50"
-          onClick={closeMenu}
-        >
+        <div className="absolute inset-0 z-10 flex justify-center overflow-y-auto">
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            exit={{
+              opacity: 0,
+            }}
+            className="absolute inset-0 cursor-pointer bg-black/50"
+            onClick={closeMenu}
+          />
+
           <motion.div
             className="fixed top-5 mx-auto flex w-11/12 items-center rounded-2xl bg-white py-4"
             initial={{
@@ -64,7 +75,7 @@ export function Panel(props: Props) {
               <li className="pb-2"></li>
             </ul>
           </motion.div>
-        </motion.div>
+        </div>
       )}
     </AnimatePresence>
   )
