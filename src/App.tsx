@@ -38,7 +38,7 @@ function App() {
         </h1>
 
         <p className="mt-2 text-center text-lg text-baltic-900">
-          A collection of patterns for site navigation on mobile
+          A collection of patterns for site navigation on mobile devices
         </p>
       </header>
 
