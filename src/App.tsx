@@ -31,7 +31,7 @@ function App() {
   const [modalOpen, setModalOpen] = React.useState(false)
 
   return (
-    <div className="mx-auto max-w-3xl px-6 text-center">
+    <div className="mx-auto flex h-full max-w-3xl flex-col px-6 text-center">
       <header>
         <h1 className="text-center text-[2.5rem] font-semibold leading-tight text-mosaic-900">
           Mobile Menu Patterns
@@ -104,7 +104,7 @@ function App() {
         {patternMap[activePattern]}
       </PatternModal>
 
-      <footer className="absolute bottom-0 left-0 -z-10 mt-8 w-full py-4 text-center text-sm text-baltic-700">
+      <footer className="mt-auto w-full py-4 pt-8 text-center text-sm text-baltic-700">
         Built by{' '}
         <a
           href="https://github.com/ekrresa"
