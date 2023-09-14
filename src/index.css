@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply pt-20 font-sans;
+    @apply pt-14 font-sans sm:pt-20;
   }
 
   p {

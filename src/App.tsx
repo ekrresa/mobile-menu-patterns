@@ -7,6 +7,7 @@ import { SlideInFromBottom } from './components/SlideInFromBottom'
 import { SlideInFromLeft } from './components/SlideInFromLeft'
 import { SlideInFromRight } from './components/SlideInFromRight'
 import { PatternModal } from './components/PatternModal'
+import { BottomNav } from './components/BottomNav'
 
 type PatternState =
   | 'push-content-down'
@@ -15,6 +16,7 @@ type PatternState =
   | 'pop-over-panel'
   | 'slide-in-from-left'
   | 'slide-in-from-right'
+  | 'bottom-nav'
 
 const patternMap: Record<PatternState, React.ReactNode> = {
   'push-content-down': <PushContentDown />,
@@ -23,6 +25,7 @@ const patternMap: Record<PatternState, React.ReactNode> = {
   'pop-over-panel': <PopOverPanel />,
   'slide-in-from-left': <SlideInFromLeft />,
   'slide-in-from-right': <SlideInFromRight />,
+  'bottom-nav': <BottomNav />,
 }
 function App() {
   const [activePattern, setActivePattern] =
@@ -43,6 +46,15 @@ function App() {
       </header>
 
       <section className="mb-8 mt-24 flex flex-wrap justify-center gap-x-4 gap-y-10 text-left">
+        <button
+          className="border-b-4 border-baltic-700 bg-transparent text-lg capitalize text-baltic-700"
+          onClick={() => {
+            setActivePattern('bottom-nav')
+            setModalOpen(true)
+          }}
+        >
+          Bottom Nav
+        </button>
         <button
           className="border-b-4 border-baltic-700 bg-transparent text-lg capitalize text-baltic-700"
           onClick={() => {
