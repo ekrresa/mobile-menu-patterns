@@ -119,12 +119,12 @@ function App() {
       <footer className="mt-auto w-full py-4 pt-8 text-center text-sm text-baltic-700">
         Built by{' '}
         <a
-          href="https://github.com/ekrresa"
+          href="https://ekrresa.com"
           target="_blank"
           rel="noreferrer"
           className="decoration-slate-500 transition-all duration-500 hover:underline"
         >
-          Ochuko.
+          Ochuko Ekrresa
         </a>
       </footer>
     </div>
